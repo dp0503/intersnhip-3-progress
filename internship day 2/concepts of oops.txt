@@ -1,0 +1,45 @@
+occp -
+encapsulation -
+	to protect the data.
+	( methos | data )
+	example = atm matchine
+2. inheritance -
+it behave like a properties and behaviors from another class.
+example = family
+3. polymorphism -
+	the same action behaves differently depending on the object.
+	example = teacher , paynow.
+4. abstraction -
+in this which data we need to show only that can be show , not anyother data we can public.
+	example = driver knows
+
+example for all of this
+class ac = power , wire , capacity , cooller , compressor , pipe , gas.
+class laptop/pc = ram , rom , gpu , cpu , color , speed , powersupply , hrz.
+class cllg = branch , capmus , parking , fees.
+
+Ex.
+Ex : Common eg in coding
+     class Bank() {
+            amount = 0
+            constructor(amount)
+                    this.amount = amount
+            getBalance(){
+                  print("Balance is: ", this.amount)
+              }
+            deposite(amount)
+              this.amount = this.amount + amount 
+           withdraw(amount)
+              this.amount = this.amount + amount
+     }
+      var myobj = new Bank(1000)
+      print(myobj.amount)//1000
+      myobj.getBalance()//1000
+      myobj.deposite(5000)
+      myobj.getBalance()//6000
+      myobj.withdraw(10000)
+      myobj.getbalance()//-4000
+
+      myobj2 = new Bank(1000)
+
+ 
