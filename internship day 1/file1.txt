@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("enter value of a");
+    scanf("%d",&a);
+    printf("enter value of b");
+    scanf("%d",&b);
+    c=a+b;
+    printf("sum of 2 digit is:%d",c);
+    return 0;
+}
+
+output:
+
+enter value of a 10
+enter value of b 20
+sum of 2 digit is:30
