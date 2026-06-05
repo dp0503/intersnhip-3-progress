@@ -1,0 +1,30 @@
+Day 4 
+
+
+website -
+	collect of web pages
+
+web page -
+	a single document displayed in web browser
+
+website -
+	amazon Wikipedia , google , w3c
+
+types of website -
+	1.static -
+		fixed content
+		built using HTML & css
+	2.dyanamic -
+		content changes dynamically
+		uses database and programing
+
+Fronted & backend -
+	Visible to use users	runs on server 
+	HTML css 		PHP , python
+	user interface 		Database handling
+
+Web development Tech -
+	html ,css , javascript , web server 
+
+what is html?
+	Hype  
