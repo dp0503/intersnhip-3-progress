@@ -1,50 +1,147 @@
-Day 4 
+# Day 4 - Introduction to Web Development (HTML & CSS)
 
+## Website and Web Pages
 
-website -
-	collect of web pages
+### What is a Website?
 
-web page -
-	a single document displayed in web browser
+A website is a collection of web pages that are connected and accessible through the internet.
 
-website -
-	amazon Wikipedia , google , w3c
+### What is a Web Page?
 
-types of website -
-	1.static -
-		fixed content
-		built using HTML & css
-	2.dyanamic -
-		content changes dynamically
-		uses database and programing
+A web page is a single document that is displayed in a web browser.
 
--frontend vs backend
+### Examples of Websites
 
-  visible to users                           runs on server
-  HTML CSS and JavaScript            PHP Python Java
-  user interface                             Database Handling
+* Amazon
+* Wikipedia
+* Google
+* W3Schools
 
+## Types of Websites
 
+### 1. Static Website
 
--Web Development Technologies
-     HTML, CSS, JavaScript Database, Web Servers
+* Contains fixed content.
+* Built using HTML and CSS.
+* Content remains the same unless manually updated.
 
--What is HTML?
-    Hyper Text Markup Language
-    not a programming language
-    it is a markup language used to create the structure and content of a webpage
- 
- -Hyper Text : refers the 'links' that connects web pages
- -Markup Language : refers to the 'tags' like (<h1> or <p>)
+### 2. Dynamic Website
 
--Heading tags
-  they are used to define headings of documents
- <h1> <h2> <h3> <h4> <h5> <h6>
+* Content changes dynamically.
+* Uses databases and programming languages.
+* Can display different content for different users.
 
-paragraph tag <p>
-line break tag <br> or <br/>
-centre <centre>
-horizontal rule <hr> or <hr/>
-preserve formatting tag <pre>
-non breaking space &nbsp;
-listing tags
+## Frontend vs Backend
+
+| Frontend              | Backend                              |
+| --------------------- | ------------------------------------ |
+| Visible to users      | Runs on the server                   |
+| HTML, CSS, JavaScript | PHP, Python, Java                    |
+| User Interface (UI)   | Database Handling and Business Logic |
+
+## Web Development Technologies
+
+* HTML
+* CSS
+* JavaScript
+* Databases
+* Web Servers
+
+## Introduction to HTML
+
+### What is HTML?
+
+HTML (HyperText Markup Language) is the standard markup language used to create the structure and content of web pages.
+
+**Note:** HTML is not a programming language; it is a markup language.
+
+### HyperText
+
+Refers to the links that connect web pages.
+
+### Markup Language
+
+Refers to the tags used to structure content, such as `<h1>` and `<p>`.
+
+## HTML Tags Learned
+
+### Heading Tags
+
+Used to define headings in a document.
+
+```html
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+
+### Other HTML Tags
+
+* Paragraph Tag: `<p>`
+* Line Break Tag: `<br>` or `<br />`
+* Center Tag: `<center>`
+* Horizontal Rule: `<hr>` or `<hr />`
+* Preserve Formatting Tag: `<pre>`
+* Non-Breaking Space: `&nbsp;`
+* List Tags: Ordered and Unordered Lists
+
+---
+
+# Introduction to CSS
+
+## What is CSS?
+
+CSS (Cascading Style Sheets) is used to style and design web pages.
+
+## Methods to Include CSS
+
+### 1. Inline CSS
+
+* Applied directly within an HTML element.
+* Has higher priority than internal and external CSS.
+
+### 2. Internal CSS
+
+* Written inside the `<style>` tag within the HTML file.
+
+### 3. External CSS
+
+* Written in a separate `.css` file and linked to the HTML document.
+
+### Important Rule
+
+If you want to override CSS priority, you can use the `!important` keyword.
+
+## CSS Selectors Learned
+
+* Universal Selector (`*`)
+* Child Selector (`>`)
+* Group Selector (`,`)
+* Descendant Selector (space)
+* Adjacent Sibling Selector (`+`)
+* Pseudo Class (`:hover`, `:focus`, etc.)
+* Pseudo Element (`::before`, `::after`, etc.)
+
+## CSS Properties Covered
+
+* Text Properties
+* Background Properties
+* Border Properties
+* Box Model
+* Positioning
+* Display Properties
+* Responsive Design using Media Queries
+* Animations
+
+## Key Learnings
+
+* Understood the difference between websites and web pages.
+* Learned the types of websites: static and dynamic.
+* Studied frontend and backend development concepts.
+* Learned the basics of HTML and commonly used tags.
+* Explored CSS, its types, selectors, and styling properties.
+* Gained an understanding of responsive design and animations.
+

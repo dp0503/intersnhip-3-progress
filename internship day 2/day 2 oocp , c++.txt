@@ -1,0 +1,145 @@
+# OOP Concepts (Object-Oriented Programming)
+
+Object-Oriented Programming (OOP) is a programming approach that organizes code into objects and classes. It is based on four main principles:
+
+## 1. Encapsulation
+
+Encapsulation is the process of binding data and methods together into a single unit (class) and protecting the data from unauthorized access.
+
+### Purpose
+
+* Protects data from direct access.
+* Improves security and data management.
+
+### Real-Life Example
+
+**ATM Machine**
+
+* Users can access their account through provided options.
+* Internal banking data remains hidden and protected.
+
+---
+
+## 2. Inheritance
+
+Inheritance allows one class to acquire the properties and behaviors of another class.
+
+### Purpose
+
+* Promotes code reusability.
+* Reduces code duplication.
+
+### Real-Life Example
+
+**Family**
+
+* Children inherit characteristics and properties from their parents.
+
+---
+
+## 3. Polymorphism
+
+Polymorphism means "many forms." The same action can behave differently depending on the object or situation.
+
+### Purpose
+
+* Increases flexibility.
+* Allows the same method to perform different tasks.
+
+### Real-Life Example
+
+**Teacher**
+
+* A teacher teaches different subjects to different classes.
+
+**Pay Now Button**
+
+* The same button can process payments through UPI, Card, Net Banking, etc.
+
+---
+
+## 4. Abstraction
+
+Abstraction means showing only the necessary information and hiding the implementation details.
+
+### Purpose
+
+* Reduces complexity.
+* Improves usability.
+
+### Real-Life Example
+
+**Driving a Car**
+
+* A driver uses the steering wheel, brakes, and accelerator.
+* The internal engine mechanism remains hidden.
+
+---
+
+# Examples of Classes
+
+## Air Conditioner (AC)
+
+### Properties
+
+* Power
+* Wire
+* Capacity
+* Cooler
+* Compressor
+* Pipe
+* Gas
+
+### Behaviors
+
+* Cooling
+* Power On/Off
+* Temperature Control
+
+---
+
+## Laptop / PC
+
+### Properties
+
+* RAM
+* ROM/Storage
+* GPU
+* CPU
+* Color
+* Speed
+* Power Supply
+* Refresh Rate (Hz)
+
+### Behaviors
+
+* Processing Data
+* Running Applications
+* Storing Files
+
+---
+
+## College
+
+### Properties
+
+* Branches
+* Campus
+* Parking
+* Fees
+
+### Behaviors
+
+* Conducting Classes
+* Managing Admissions
+* Organizing Events
+
+---
+
+## Key Learnings
+
+* Learned the four pillars of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+* Understood real-world examples of each OOP concept.
+* Learned how classes contain properties (data) and behaviors (methods).
+* Explored practical examples such as AC, Laptop, and College classes.
+
