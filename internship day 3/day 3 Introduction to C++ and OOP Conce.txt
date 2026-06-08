@@ -1,0 +1,309 @@
+# Introduction to C++ and OOP Concepts
+
+## Access Specifiers in OOP
+
+Access specifiers control the visibility and accessibility of class members (data and functions).
+
+### Types of Access Specifiers
+
+### 1. Public
+
+* Members can be accessed from anywhere in the program.
+* Commonly used for functions that need to be called outside the class.
+
+### 2. Private
+
+* Members can only be accessed within the same class.
+* Provides data security and encapsulation.
+
+### 3. Protected
+
+* Members can be accessed within the class and its derived (child) classes.
+* Mostly used in inheritance.
+
+### Example
+
+```cpp
+class Student {
+private:
+    int marks;
+
+public:
+    void setMarks(int m) {
+        marks = m;
+    }
+
+    void display() {
+        cout << marks;
+    }
+};
+```
+
+---
+
+# Functions in C++
+
+## What is a Function?
+
+A function is a block of code that performs a specific task.
+
+### Uses of Functions
+
+* Reduces code repetition.
+* Improves readability.
+* Makes programs easier to maintain.
+* Supports code reusability.
+
+### Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void greet() {
+    cout << "Welcome to C++";
+}
+
+int main() {
+    greet();
+    return 0;
+}
+```
+
+### Output
+
+```
+Welcome to C++
+```
+
+---
+
+# Class and Object
+
+## Class
+
+A class is a blueprint or template used to create objects.
+
+## Object
+
+An object is an instance of a class.
+
+### Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+
+    void display() {
+        cout << "Student Name: " << name;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.name = "Devarsh";
+    s1.display();
+
+    return 0;
+}
+```
+
+### Output
+
+```
+Student Name: Devarsh
+```
+
+---
+
+# Inheritance
+
+Inheritance allows one class to acquire the properties and methods of another class.
+
+## 1. Single Inheritance
+
+One Parent → One Child
+
+```cpp
+class Parent {
+public:
+    void show() {
+        cout << "Parent Class";
+    }
+};
+
+class Child : public Parent {
+};
+```
+
+### Diagram
+
+```
+Parent
+   |
+ Child
+```
+
+---
+
+## 2. Multilevel Inheritance
+
+One Parent → Child → Grandchild
+
+```cpp
+class GrandParent {
+public:
+    void display() {
+        cout << "Grand Parent";
+    }
+};
+
+class Parent : public GrandParent {
+};
+
+class Child : public Parent {
+};
+```
+
+### Diagram
+
+```
+GrandParent
+      |
+    Parent
+      |
+     Child
+```
+
+---
+
+# Function Overloading
+
+Function overloading means creating multiple functions with the same name but different parameters.
+
+### Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Demo {
+public:
+    void show() {
+        cout << "No Parameter" << endl;
+    }
+
+    void show(int x) {
+        cout << "Value: " << x;
+    }
+};
+
+int main() {
+    Demo d;
+    d.show();
+    d.show(10);
+
+    return 0;
+}
+```
+
+### Output
+
+```
+No Parameter
+Value: 10
+```
+
+---
+
+# Operator Overloading
+
+Operator overloading allows operators to perform user-defined operations on objects.
+
+## Categories of Operators
+
+### 1. Arithmetic Operators
+
+Used for mathematical calculations.
+
+* `+`
+* `-`
+* `*`
+* `/`
+* `%`
+
+Example:
+
+```cpp
+int a = 10, b = 5;
+cout << a + b;
+```
+
+Output:
+
+```
+15
+```
+
+---
+
+### 2. Logical Operators
+
+Used to combine conditions.
+
+* `&&` (AND)
+* `||` (OR)
+* `!` (NOT)
+
+Example:
+
+```cpp
+cout << (5 > 2 && 10 > 3);
+```
+
+Output:
+
+```
+1
+```
+
+---
+
+### 3. Bitwise Operators
+
+Perform operations on binary values.
+
+* `&` (AND)
+* `|` (OR)
+* `^` (XOR)
+* `~` (NOT)
+* `<<` (Left Shift)
+* `>>` (Right Shift)
+
+Example:
+
+```cpp
+int a = 5, b = 3;
+cout << (a & b);
+```
+
+### Output
+
+```
+1
+```
+
+---
+
+# Key Learnings
+
+* Learned the role of Public, Private, and Protected access specifiers.
+* Understood the importance and benefits of functions.
+* Learned the concepts of Class and Object.
+* Explored Single and Multilevel Inheritance.
+* Practiced Function Overloading.
+* Studied Operator Overloading and different categories of operators such as Arithmetic, Logical, and Bitwise.
