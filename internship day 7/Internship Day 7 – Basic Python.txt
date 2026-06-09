@@ -1,0 +1,81 @@
+Internship Day 7 – Basic Python
+
+Today I learned about Python programming language. Python is a simple and easy programming language. It is one of the most popular languages in the world because its syntax is easy to understand.
+
+What is Python?
+
+Python is a high-level interpreted programming language. It was created by Guido van Rossum in 1991. Python is beginner-friendly and can be used to create different types of applications.
+
+Where is Python Used?
+
+Python is used in many areas such as:
+
+* Web Development
+* Data Science
+* Artificial Intelligence (AI)
+* Machine Learning (ML)
+* Automation
+* Software Development
+* Cyber Security
+
+Python Interpreter / Compiler
+
+Python is an interpreted language. It uses an interpreter to run code line by line.
+
+Common tools used for Python:
+
+* IDLE
+* VS Code
+* PyCharm
+* Jupyter Notebook
+* Google Colab
+
+In our internship we used VS Code to write and run Python programs.
+
+First Python Program
+
+print("Hello World")
+
+Output:
+
+Hello World
+
+Features of Python
+
+* Easy to learn
+* Simple syntax
+* Open source
+* Platform independent
+* Large number of libraries
+
+Advantages of Python
+
+* Easy coding
+* Less code compared to other languages
+* Fast development
+* Good community support
+* Used in many industries
+
+Difference Between Compiler and Interpreter
+
+Compiler:
+
+* Converts whole program at once.
+* Example: C, C++
+
+Interpreter:
+
+* Executes code line by line.
+* Example: Python
+
+Key Points Learned
+
+* Python is easy and beginner-friendly.
+* Python is used in AI, web development and automation.
+* Python uses an interpreter.
+* VS Code is a popular tool for Python programming.
+* Python programs are simple and readable.
+
+Conclusion
+
+Today I learned the basics of Python, its uses, features, and tools. I also learned how to write and run a simple Python program.
