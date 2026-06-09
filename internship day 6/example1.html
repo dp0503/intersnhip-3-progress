@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+</head>
+<body>
+
+<h2>Arithmetic Operations</h2>
+
+Number 1: <input type="number" id="n1"><br><br>
+Number 2: <input type="number" id="n2"><br><br>
+
+<select id="choice">
+    <option value="+">Addition</option>
+    <option value="-">Subtraction</option>
+    <option value="*">Multiplication</option>
+    <option value="/">Division</option>
+</select>
+
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let op = document.getElementById("choice").value;
+    let ans;
+
+    switch(op){
+        case "+": ans = a + b; break;
+        case "-": ans = a - b; break;
+        case "*": ans = a * b; break;
+        case "/": ans = a / b; break;
+    }
+
+    document.getElementById("result").innerHTML = "Result = " + ans;
+}
+</script>
+
+</body>
+</html>

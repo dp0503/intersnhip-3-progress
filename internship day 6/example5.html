@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="showAlert()">Alert</button>
+<button onclick="showConfirm()">Confirm</button>
+<button onclick="showPrompt()">Prompt</button>
+
+<script>
+function showAlert() {
+    alert("Welcome!");
+}
+
+function showConfirm() {
+    let x = confirm("Are you sure?");
+    alert(x);
+}
+
+function showPrompt() {
+    let name = prompt("Enter your name:");
+    alert("Hello " + name);
+}
+</script>
+
+</body>
+</html>

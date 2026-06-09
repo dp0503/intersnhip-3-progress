@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>GST Calculator</h2>
+
+Amount:
+<input type="number" id="amount"><br><br>
+
+GST %:
+<input type="number" id="gst"><br><br>
+
+<button onclick="calculateGST()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculateGST() {
+    let amount = Number(document.getElementById("amount").value);
+    let gst = Number(document.getElementById("gst").value);
+
+    let gstAmount = amount * gst / 100;
+    let total = amount + gstAmount;
+
+    document.getElementById("result").innerHTML =
+    "GST = " + gstAmount + "<br>Total = " + total;
+}
+</script>
+
+</body>
+</html>
