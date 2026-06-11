@@ -1,0 +1,68 @@
+# Day 4 - HTML & CSS
+
+* Learned the basics of web development.
+* Understood the difference between a website and a web page.
+* Explored examples of websites such as Amazon, Google, and Wikipedia.
+* Studied the types of websites:
+
+  * Static Website
+  * Dynamic Website
+* Learned the difference between Frontend and Backend development.
+* Understood the role of HTML, CSS, JavaScript, Databases, and Web Servers in web development.
+
+## HTML
+
+* Learned about HTML (HyperText Markup Language).
+* Understood that HTML is a markup language used to create the structure of web pages.
+* Learned the meaning of:
+
+  * HyperText
+  * Markup Language
+* Practiced common HTML tags:
+
+  * Heading Tags (`<h1>` to `<h6>`)
+  * Paragraph Tag (`<p>`)
+  * Line Break Tag (`<br>`)
+  * Horizontal Rule (`<hr>`)
+  * Preformatted Text Tag (`<pre>`)
+  * Non-Breaking Space (`&nbsp;`)
+  * List Tags
+
+## CSS
+
+* Learned about CSS (Cascading Style Sheets).
+* Understood how CSS is used to style web pages.
+* Studied different ways to apply CSS:
+
+  * Inline CSS
+  * Internal CSS
+  * External CSS
+* Learned about CSS priority and the use of `!important`.
+
+## CSS Selectors
+
+* Universal Selector
+* Child Selector
+* Group Selector
+* Descendant Selector
+* Adjacent Selector
+* Pseudo Class Selector
+* Pseudo Element Selector
+
+## CSS Properties
+
+* Text Properties
+* Background Properties
+* Border Properties
+* Box Model
+* Position Property
+* Display Property
+* Responsive Design using Media Queries
+* Basic Animations
+
+## Key Learning
+
+* Built a basic understanding of website structure using HTML.
+* Learned how to style and design web pages using CSS.
+* Explored different selectors and properties used in modern web development.
+* Gained knowledge of responsive web design concepts.
