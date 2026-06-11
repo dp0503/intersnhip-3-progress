@@ -1,0 +1,157 @@
+Internship Day 9 – List, Tuple, Dictionary and Functions in Python
+
+Today I learned about Python data structures like List, Tuple, Dictionary, Set and basic Functions.
+
+~ List
+
+* List is similar to an array.
+* It is one of the most used data types in Python.
+* List is mutable (values can be changed).
+* It can store different types of data.
+* We can store as many values as we want.
+
+Example:
+mylist = [1, 2, -3, 4]
+
+* Index starts from 0.
+* Negative indexing is also possible.
+* Access values using:
+  print(mylist)
+  print(mylist[1])
+
+Common List Methods:
+
+* sort()
+* reverse()
+* sorted()
+* max()
+* min()
+* sum()
+* count()
+* append()
+* insert()
+* index()
+* pop()
+* remove()
+* clear()
+* copy()
+* extend()
+
+Range Function
+
+Python does not have ++ and -- operators.
+
+Example:
+
+for i in range(5):
+print(i)
+
+Output:
+0
+1
+2
+3
+4
+
+* range() generates numbers between a starting and ending point.
+
+~ List Slicing
+
+Example:
+
+print(mylist[2:6])
+print(mylist[2:])
+
+* Slicing is used to access a part of a list.
+
+~ Nested List
+
+* List inside another list is called a nested list.
+* It can be used to store rows and columns.
+
+Example:
+data = [[1,2],[3,4]]
+
+~ Tuple
+
+* Tuple is similar to a list.
+* Tuple is immutable (cannot be changed).
+* Written using () brackets.
+
+Example:
+mytuple = (10,20,30)
+
+Methods:
+
+* count()
+* index()
+
+~ Dictionary
+
+* Dictionary stores data in key-value pairs.
+* Written using {} brackets.
+
+Example:
+
+student = {
+"name":"Devarsh",
+"age":20
+}
+
+* Values are accessed using keys.
+* Values can be updated anytime.
+
+~ Set
+
+* Set is a collection of unique values.
+* Duplicate values are not allowed.
+* Order of elements is random.
+
+Example:
+
+myset = {1,2,3,3,4}
+
+Output:
+{1,2,3,4}
+
+Operations:
+
+* Union
+* Intersection
+* Symmetric Difference
+
+~ Functions in Python
+
+* Functions are used to reuse code.
+* User-defined functions are created using def keyword.
+
+Example:
+
+def greet():
+print("Hello")
+
+greet()
+
+~ Streamlit
+
+Streamlit is a Python library used to create simple web applications.
+
+Install Streamlit:
+
+pip install streamlit
+
+Example:
+
+import streamlit as st
+st.title("Hello World")
+
+* If any installation error occurs, run Command Prompt as Administrator.
+
+Key Points Learned
+
+* List is mutable and most commonly used.
+* Tuple is immutable.
+* Dictionary stores data using key and value pairs.
+* Set does not allow duplicate values.
+* Functions help in code reusability.
+* Streamlit is used to build web applications using Python.
