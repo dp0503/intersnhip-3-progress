@@ -1,0 +1,7 @@
+myfile = open("myfile.txt", "a")
+myfile.write("This is a new line.\n")
+myfile.close()
+myfile2 = open("myfile.txt", "r")
+content = myfile2.read()
+print(content)
+myfile2.close()

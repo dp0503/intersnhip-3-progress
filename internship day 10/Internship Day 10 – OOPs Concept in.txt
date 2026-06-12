@@ -1,0 +1,141 @@
+Internship Day 10 – OOPs Concept in Python
+
+Today I learned about OOPs (Object Oriented Programming) concepts in Python and File Handling.
+
+~ Class in Python
+
+- A class is used to create objects.
+- It acts as a blueprint for objects.
+
+Syntax:
+
+class Student:
+    pass
+
+- "pass" is a keyword used when no code is written inside the class.
+
+Creating Object:
+
+obj = Student()
+
+~ Methods and Self Keyword
+
+- Functions inside a class are called methods.
+- The self keyword is compulsory in methods.
+- self refers to the current object of the class.
+
+Example:
+
+class Student:
+    def display(self):
+        print("Hello")
+
+~ Constructor
+
+- A constructor is a special method that runs automatically when an object is created.
+- It does not need to be called manually.
+
+Syntax:
+
+def __init__(self):
+    print("Constructor Called")
+
+- Constructors can also take parameters.
+
+Example:
+
+def __init__(self, name):
+    self.name = name
+
+~ Inheritance
+
+- Inheritance allows one class to use the properties and methods of another class.
+- It helps in code reusability.
+
+Example:
+
+class A:
+    pass
+
+class B(A):
+    pass
+
+Types of Inheritance:
+
+- Single Inheritance
+- Multiple Inheritance
+- Multilevel Inheritance
+- Hierarchical Inheritance
+- Hybrid Inheritance
+
+~ Super Keyword
+
+- super() is used to access parent class methods and constructors.
+
+Example:
+
+super().__init__()
+
+- It helps child classes use parent class functionality.
+
+~ File Handling
+
+- File handling is used to create, read, write and manage files.
+
+Common Functions:
+
+- open()
+- read()
+- readline()
+- write()
+- writelines()
+- flush()
+- readable()
+- seek()
+- tell()
+- truncate()
+- close()
+
+~ File Modes
+
+- r  : Read file
+- w  : Write file (overwrites existing content)
+- a  : Append data to existing file
+- x  : Create new file
+- rb : Read binary file
+- rt : Read text file
+
+Example:
+
+file = open("data.txt", "w")
+file.write("Hello")
+file.close()
+
+~ With Statement
+
+- The "with" statement automatically closes the file after use.
+
+Example:
+
+with open("data.txt", "r") as file:
+    data = file.read()
+
+Benefits:
+- No need to close file manually
+- Cleaner code
+- Better file management
+
+~ What I Learned Today
+
+- Class is used to create objects.
+- self refers to the current object.
+- Constructor runs automatically when an object is created.
+- Inheritance helps in code reuse.
+- super() is used to access parent class features.
+- File handling is used to read and write files.
+- Different file modes are used for different operations.
+- The "with" statement automatically manages file closing.
+
+Conclusion
+
+Today I learned the basics of OOPs concepts in Python such as Class, Object, Constructor, Inheritance and Super Keyword. I also learned File Handling and how to work with files using different modes and functions.
