@@ -2,34 +2,33 @@
 import streamlit as st
 import requests
 import csv
+import json
 from io import StringIO
 import streamlit.components.v1 as components
-import json
 
 st.set_page_config(
     page_title="COVID-19 India Dashboard",
     layout="wide"
 )
 
-st.title("🦠 COVID-19 India Case Study Dashboard")
+st.title("🦠 COVID-19 India Case Study")
 
-# Fetch Data
 url = "https://data.covid19india.org/csv/latest/states.csv"
 
-try:
-    response = requests.get(url)
-    response.raise_for_status()
+response = requests.get(url)
 
-    csv_data = StringIO(response.text)
-    reader = csv.DictReader(csv_data)
-    data = list(reader)
+csv_data = StringIO(response.text)
 
-except Exception as e:
-    st.error(f"Error loading data: {e}")
-    st.stop()
+reader = csv.DictReader(csv_data)
 
-# State Selection
-states = sorted(set(row["State"] for row in data))
+data = list(reader)
+
+states = sorted(
+    set(
+        row["State"]
+        for row in data
+    )
+)
 
 selected_state = st.selectbox(
     "Select State",
@@ -37,38 +36,16 @@ selected_state = st.selectbox(
 )
 
 state_data = [
-    row for row in data
+    row
+    for row in data
     if row["State"] == selected_state
 ]
 
 latest = state_data[-1]
 
-st.header(f"COVID Report - {selected_state}")
-
-# Metrics
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.metric(
-        "Confirmed Cases",
-        latest["Confirmed"]
-    )
-
-with col2:
-    st.metric(
-        "Recovered Cases",
-        latest["Recovered"]
-    )
-
-with col3:
-    st.metric(
-        "Death Cases",
-        latest["Deceased"]
-    )
-
-# Recovery Rate
-confirmed = int(latest["Confirmed"]) if latest["Confirmed"] else 0
-recovered = int(latest["Recovered"]) if latest["Recovered"] else 0
+confirmed = int(latest["Confirmed"] or 0)
+recovered = int(latest["Recovered"] or 0)
+deaths = int(latest["Deceased"] or 0)
 
 recovery_rate = (
     (recovered / confirmed) * 100
@@ -76,16 +53,38 @@ recovery_rate = (
     else 0
 )
 
-st.success(
-    f"Recovery Rate: {recovery_rate:.2f}%"
+st.header(f"COVID Report - {selected_state}")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "Confirmed Cases",
+        f"{confirmed:,}"
+    )
+
+with col2:
+    st.metric(
+        "Recovered",
+        f"{recovered:,}"
+    )
+
+with col3:
+    st.metric(
+        "Deaths",
+        f"{deaths:,}"
+    )
+
+st.write(
+    f"### Recovery Rate: {recovery_rate:.2f}%"
 )
 
-# Recent Records Table
-st.subheader("📋 Recent Records")
+st.subheader("Recent Records")
 
 table_data = []
 
 for row in state_data[-10:]:
+
     table_data.append({
         "Date": row["Date"],
         "Confirmed": row["Confirmed"],
@@ -95,24 +94,20 @@ for row in state_data[-10:]:
 
 st.table(table_data)
 
-# Trend Chart
-st.subheader("📈 Confirmed Cases Trend")
+st.subheader("Confirmed Cases Trend")
 
 chart_data = {}
 
 for row in state_data:
-    try:
-        chart_data[row["Date"]] = int(row["Confirmed"])
-    except:
-        pass
+    chart_data[row["Date"]] = int(
+        row["Confirmed"] or 0
+    )
 
 st.line_chart(chart_data)
 
-# ---------------------------
-# 3D Globe Section
-# ---------------------------
-
-st.subheader("🌍 Interactive 3D COVID Globe")
+# ---------------------------------
+# Globe Data
+# ---------------------------------
 
 state_coordinates = {
     "Gujarat": [23.0225, 72.5714],
@@ -127,12 +122,13 @@ state_coordinates = {
     "Madhya Pradesh": [23.2599, 77.4126]
 }
 
-globe_data = []
+globe_points = []
 
 for state, coords in state_coordinates.items():
 
     matching = [
-        row for row in data
+        row
+        for row in data
         if row["State"] == state
     ]
 
@@ -140,132 +136,68 @@ for state, coords in state_coordinates.items():
 
         latest_row = matching[-1]
 
-        try:
-            cases = int(latest_row["Confirmed"])
-        except:
-            cases = 0
+        confirmed_cases = int(
+            latest_row["Confirmed"] or 0
+        )
 
-        globe_data.append({
+        recovered_cases = int(
+            latest_row["Recovered"] or 0
+        )
+
+        death_cases = int(
+            latest_row["Deceased"] or 0
+        )
+
+        recovery_percent = (
+            round(
+                (recovered_cases / confirmed_cases) * 100,
+                2
+            )
+            if confirmed_cases > 0
+            else 0
+        )
+
+        globe_points.append({
+
             "name": state,
             "lat": coords[0],
             "lng": coords[1],
-            "cases": cases,
-            "size": max(cases / 1000000, 0.5)
+            "cases": confirmed_cases,
+            "deaths": death_cases,
+            "recovery_rate": recovery_percent
+
         })
 
-points_json = json.dumps(globe_data)
+with open(
+    "work.html",
+    "r",
+    encoding="utf-8"
+) as file:
 
-globe_html = f"""
-<!DOCTYPE html>
-<html>
-<head>
+    html_template = file.read()
 
-<script src="https://unpkg.com/globe.gl"></script>
-
-<style>
-
-body {{
-    margin: 0;
-    background: transparent;
-}}
-
-#globeViz {{
-    width: 100%;
-    height: 750px;
-}}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="globeViz"></div>
-
-<script>
-
-const points = {points_json};
-
-const globe = Globe()
-(document.getElementById('globeViz'))
-
-.globeImageUrl(
-'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg'
+html_template = html_template.replace(
+    "__POINTS__",
+    json.dumps(globe_points)
 )
 
-.bumpImageUrl(
-'https://unpkg.com/three-globe/example/img/earth-topology.png'
-)
-
-.backgroundImageUrl(
-'https://unpkg.com/three-globe/example/img/night-sky.png'
-)
-
-.pointsData(points)
-
-.pointAltitude(0.18)
-
-.pointRadius('size')
-
-.pointColor(() => '#ff4444')
-
-.pointLabel(d => `
-<div style="
-padding:12px;
-background:white;
-color:black;
-border-radius:10px;
-font-family:Arial;
-font-size:14px;
-">
-<b>${{d.name}}</b><br>
-Confirmed Cases: ${{d.cases.toLocaleString()}}
-</div>
-`)
-
-.animateIn(true);
-
-globe.controls().autoRotate = true;
-globe.controls().autoRotateSpeed = 0.4;
-
-globe.pointOfView(
-{{
-lat: 22,
-lng: 78,
-altitude: 2.5
-}},
-3000
-);
-
-</script>
-
-</body>
-</html>
-"""
+st.subheader("🌍 Premium Interactive COVID Globe")
 
 components.html(
-    globe_html,
-    height=750
+    html_template,
+    height=850
 )
 
-# ---------------------------
-# Case Study Conclusion
-# ---------------------------
-
-st.subheader("📝 Case Study Conclusion")
+st.subheader("Case Study Conclusion")
 
 st.write(f"""
-**State:** {selected_state}
+State: {selected_state}
 
-**Total Confirmed Cases:** {latest['Confirmed']}
+Total Confirmed Cases: {confirmed:,}
 
-**Total Recovered Cases:** {latest['Recovered']}
+Total Recovered Cases: {recovered:,}
 
-**Total Death Cases:** {latest['Deceased']}
+Total Death Cases: {deaths:,}
 
-**Recovery Rate:** {recovery_rate:.2f}%
-
-This dashboard analyzes COVID-19 data using official India COVID records.
-The interactive 3D globe visualizes COVID case distribution across major states of India.
-Hover over any marker on the globe to see state information and confirmed case counts.
+Recovery Rate: {recovery_rate:.2f}%
 """)
